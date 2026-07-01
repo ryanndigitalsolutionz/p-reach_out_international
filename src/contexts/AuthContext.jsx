@@ -57,8 +57,16 @@ export function AuthProvider({ children }) {
     await supabase.auth.signOut()
   }
 
+  const changeAdminPin = async (newPin) => {
+    const { error } = await supabase
+      .from('admin_pin')
+      .update({ pin: newPin, updated_at: new Date().toISOString() })
+      .eq('id', 1)
+    return { error }
+  }
+
   return (
-    <AuthContext.Provider value={{ user, profile, loading, signUp, signIn, signOut }}>
+    <AuthContext.Provider value={{ user, profile, loading, signUp, signIn, signOut, changeAdminPin }}>
       {children}
     </AuthContext.Provider>
   )
