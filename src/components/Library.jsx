@@ -49,7 +49,7 @@ export default function Library() {
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
         <div className="reveal" style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <span className="section-label">Mental Health Library</span>
-          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: '#1A1A2E', letterSpacing: '-0.02em', lineHeight: 1.15, marginBottom: '1.25rem' }}>
+          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: '#615a5a', letterSpacing: '-0.02em', lineHeight: 1.15, marginBottom: '1.25rem' }}>
             Understand Every Condition,<br />
             <span className="gradient-text">Find Every Answer</span>
           </h2>

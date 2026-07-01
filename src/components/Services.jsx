@@ -59,7 +59,7 @@ export default function Services() {
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
         <div className="reveal" style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <span className="section-label">What We Offer</span>
-          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: '#1A1A2E', letterSpacing: '-0.02em', lineHeight: 1.15, marginBottom: '1.25rem' }}>
+          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: '#615a5a', letterSpacing: '-0.02em', lineHeight: 1.15, marginBottom: '1.25rem' }}>
             Comprehensive Mental Health<br />
             <span className="gradient-text">Services &amp; Support</span>
           </h2>
