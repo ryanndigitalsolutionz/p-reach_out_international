@@ -43,7 +43,7 @@ export default function Hero() {
               <div style={{ width: '40px', height: '2px', background: '#C41E3A', borderRadius: '1px' }}></div>
             </div>
 
-            <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 900, lineHeight: 1.1, color: '#2e2e31', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
+            <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 900, lineHeight: 1.1, color: '#9b9b9b', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
               Reaching Out,<br />
               <span className="gradient-text">Healing Minds,</span><br />
               Empowering Lives
