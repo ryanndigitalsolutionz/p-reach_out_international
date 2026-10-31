@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="We&#x27;re Glad You&#x27;re Here">
+  <title>We&#x27;re Glad You&#x27;re Here</title>
+  <desc>Invited to the administration team</desc>
+  <circle cx="100" cy="100" r="96" fill="#B7791F"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="3"/>
+  <circle cx="100" cy="100" r="80" fill="#000" fill-opacity=".14"/>
+  <g><path d="M100 64 L140 79 V104 C140 125 122 139 100 148 C78 139 60 125 60 104 V79 Z" fill="#fff"/><polyline points="81,104 95,118 121,88" fill="none" stroke="#B7791F" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></g>
+  
+</svg>

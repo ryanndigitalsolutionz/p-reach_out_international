@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Beautiful Story">
+  <title>Beautiful Story</title>
+  <desc>First diary written</desc>
+  <circle cx="100" cy="100" r="96" fill="#7B5EA7"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="3"/>
+  <circle cx="100" cy="100" r="80" fill="#000" fill-opacity=".14"/>
+  <g><path d="M100 82 C88 70 72 70 58 75 V132 C72 128 88 128 100 140 Z" fill="#fff"/><path d="M100 82 C112 70 128 70 142 75 V132 C128 128 112 128 100 140 Z" fill="#fff"/><path d="M100 82 V140" stroke="#7B5EA7" stroke-width="3"/><path d="M70 88 C78 86 86 87 92 91 M70 100 C78 98 86 99 92 103 M108 91 C114 87 122 86 130 88 M108 103 C114 99 122 98 130 100" stroke="#7B5EA7" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/></g>
+  
+</svg>

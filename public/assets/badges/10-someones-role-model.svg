@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="You&#x27;re Someone&#x27;s Role Model">
+  <title>You&#x27;re Someone&#x27;s Role Model</title>
+  <desc>Helped in 5 live programs</desc>
+  <circle cx="100" cy="100" r="96" fill="#3A7CA5"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="3"/>
+  <circle cx="100" cy="100" r="80" fill="#000" fill-opacity=".14"/>
+  <g><polygon points="100.0,60.0 111.2,88.6 141.8,90.4 118.1,109.9 125.9,139.6 100.0,123.0 74.1,139.6 81.9,109.9 58.2,90.4 88.8,88.6" fill="#fff" stroke-linejoin="round"/></g>
+  <rect x="84.5" y="150" width="31" height="26" rx="13" fill="#fff"/><text x="100" y="169" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="17" fill="#3A7CA5">5</text>
+</svg>

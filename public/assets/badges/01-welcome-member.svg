@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Welcome Member!">
+  <title>Welcome Member!</title>
+  <desc>Signing up</desc>
+  <circle cx="100" cy="100" r="96" fill="#2A9D8F"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="3"/>
+  <circle cx="100" cy="100" r="80" fill="#000" fill-opacity=".14"/>
+  <g><path d="M100 142 V104" stroke="#fff" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M100 112 C100 86 80 78 62 80 C62 102 80 112 100 112 Z" fill="#fff"/><path d="M100 100 C100 78 118 66 140 68 C140 92 120 102 100 100 Z" fill="#fff"/></g>
+  
+</svg>

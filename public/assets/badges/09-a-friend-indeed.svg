@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="A Friend Indeed">
+  <title>A Friend Indeed</title>
+  <desc>20 donations in the past 3 months</desc>
+  <circle cx="100" cy="100" r="96" fill="#E76F51"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="3"/>
+  <circle cx="100" cy="100" r="80" fill="#000" fill-opacity=".14"/>
+  <g><path d="M100 138 C60 110 56 82 74 72 C86 66 98 72 100 82 C102 72 114 66 126 72 C144 82 140 110 100 138 Z" fill="#fff"  transform="translate(100 102) scale(1.0) translate(-100 -102)"/></g>
+  <rect x="79.0" y="150" width="42" height="26" rx="13" fill="#fff"/><text x="100" y="169" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="17" fill="#E76F51">20</text>
+</svg>

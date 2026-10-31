@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="What a Friend We Have">
+  <title>What a Friend We Have</title>
+  <desc>Helping a fundraise</desc>
+  <circle cx="100" cy="100" r="96" fill="#E76F51"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="3"/>
+  <circle cx="100" cy="100" r="80" fill="#000" fill-opacity=".14"/>
+  <g><path d="M100 138 C60 110 56 82 74 72 C86 66 98 72 100 82 C102 72 114 66 126 72 C144 82 140 110 100 138 Z" fill="#fff"  transform="translate(76 98) scale(0.8) translate(-100 -102)"/><path d="M100 138 C60 110 56 82 74 72 C86 66 98 72 100 82 C102 72 114 66 126 72 C144 82 140 110 100 138 Z" fill="#fff" stroke="#E76F51" stroke-width="5" paint-order="stroke" transform="translate(124 108) scale(0.8) translate(-100 -102)"/></g>
+  
+</svg>
