@@ -68,7 +68,7 @@ export default function Header() {
   return (
     <>
       <header
-        className="sticky top-0 z-50 px-3 py-3 sm:px-5 lg:px-8"
+        className="sticky top-0 z-50 px-2 py-2 sm:px-4 lg:px-6"
         style={{
           backgroundColor: theme.navBg,
           borderBottom: `1px solid ${theme.border}`,
@@ -76,7 +76,7 @@ export default function Header() {
         }}
       >
         <div
-          className="mx-auto flex max-w-7xl items-center justify-between gap-3 rounded-full border px-3 py-2 sm:gap-5 sm:px-5"
+          className="mx-auto flex max-w-6xl items-center justify-between gap-2 rounded-full border px-3 py-1.5 sm:gap-4 sm:px-4"
           style={{
             backgroundColor: theme.card,
             borderColor: theme.border,
@@ -87,7 +87,7 @@ export default function Header() {
 
           {/* Desktop navigation */}
           <nav
-            className="hidden items-center gap-4 xl:flex"
+            className="hidden items-center gap-3 xl:flex"
             aria-label="Main navigation"
           >
             {NAVIGATION_ITEMS.map((item) => {
@@ -117,14 +117,14 @@ export default function Header() {
                         setOpenDropdown(null);
                       }
                     }}
-                    className="flex items-center gap-1 whitespace-nowrap py-3 text-sm font-semibold transition-opacity hover:opacity-65"
+                    className="flex items-center gap-1 whitespace-nowrap py-2 text-xs font-semibold transition-opacity hover:opacity-65"
                     style={{ color: theme.navText }}
                   >
                     {item.label}
 
                     <svg
                       viewBox="0 0 20 20"
-                      className={`h-3.5 w-3.5 transition-transform ${
+                      className={`h-3 w-3 transition-transform ${
                         isOpen ? "rotate-180" : ""
                       }`}
                       fill="none"
@@ -178,7 +178,7 @@ export default function Header() {
             <Link
               to="/donations"
               onClick={closeNavigation}
-              className="inline-flex min-h-10 items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-bold text-white no-underline transition-transform hover:-translate-y-0.5 sm:px-5"
+              className="inline-flex min-h-9 items-center justify-center gap-1.5 rounded-full px-3 py-2 text-xs font-bold text-white no-underline transition-transform hover:-translate-y-0.5 sm:px-4"
               style={{ backgroundColor: theme.primary }}
             >
               <span aria-hidden="true">♥</span>

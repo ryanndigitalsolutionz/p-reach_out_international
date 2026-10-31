@@ -18,16 +18,13 @@ export default function HomePage() {
 
       <main>
         {/* Homepage Hero */}
-        <section
-          className="relative px-5 pb-20 pt-12 sm:px-8 sm:pb-28 sm:pt-20 lg:px-12 lg:pt-24"
-        >
-          <div
-            className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16"
-          >
+        <section className="relative px-4 pb-14 pt-8 sm:px-6 sm:pb-16 sm:pt-12 lg:px-8 lg:pb-20 lg:pt-16">
+          <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10">
+
             {/* Hero content */}
             <div className="min-w-0">
               <p
-                className="mb-5 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] sm:text-sm"
+                className="mb-4 inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.12em] sm:text-xs"
                 style={{
                   color: theme.primary,
                   borderColor: theme.border,
@@ -39,7 +36,7 @@ export default function HomePage() {
               </p>
 
               <h1
-                className="max-w-3xl text-4xl leading-tight sm:text-5xl lg:text-6xl xl:text-7xl"
+                className="max-w-3xl text-[clamp(2.5rem,3.2vw,3.5rem)] leading-[1.12]"
                 style={{ fontFamily: '"Carter One", sans-serif' }}
               >
                 Reaching Out,
@@ -53,7 +50,7 @@ export default function HomePage() {
               </h1>
 
               <p
-                className="mt-6 max-w-2xl text-base leading-8 sm:text-lg"
+                className="mt-5 max-w-xl text-sm leading-7 sm:text-base"
                 style={{
                   fontFamily: '"Nunito Sans", sans-serif',
                   color: theme.textMid,
@@ -66,7 +63,7 @@ export default function HomePage() {
               </p>
 
               <p
-                className="mt-5 text-2xl sm:text-3xl"
+                className="mt-4 text-xl sm:text-2xl"
                 style={{
                   fontFamily: '"Story Script", cursive',
                   color: theme.primary,
@@ -75,10 +72,10 @@ export default function HomePage() {
                 A Friend Stays There
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-6 flex flex-wrap gap-3">
                 <Link
                   to="/about"
-                  className="inline-flex min-h-12 items-center justify-center rounded-full px-6 py-3 text-sm font-bold text-white no-underline transition-transform hover:-translate-y-0.5 sm:text-base"
+                  className="inline-flex min-h-10 items-center justify-center rounded-full px-5 py-2.5 text-xs font-bold text-white no-underline transition-transform hover:-translate-y-0.5 sm:text-sm"
                   style={{ backgroundColor: theme.primary }}
                 >
                   Learn More <span className="ml-2">↗</span>
@@ -86,7 +83,7 @@ export default function HomePage() {
 
                 <Link
                   to="/donations"
-                  className="inline-flex min-h-12 items-center justify-center rounded-full border px-6 py-3 text-sm font-bold no-underline transition-opacity hover:opacity-70 sm:text-base"
+                  className="inline-flex min-h-10 items-center justify-center rounded-full border px-5 py-2.5 text-xs font-bold no-underline transition-opacity hover:opacity-70 sm:text-sm"
                   style={{
                     borderColor: theme.border,
                     color: theme.text,
@@ -98,15 +95,15 @@ export default function HomePage() {
             </div>
 
             {/* Brand artwork card */}
-            <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+            <div className="relative mx-auto w-full max-w-[34rem]">
               <div
-                className="absolute -inset-4 rounded-[2.5rem] opacity-60 blur-xl sm:-inset-6"
+                className="absolute -inset-3 rounded-[2rem] opacity-60 blur-xl sm:-inset-4"
                 style={{ backgroundColor: theme.bgSoft }}
                 aria-hidden="true"
               />
 
               <div
-                className="relative rounded-[2rem] border p-5 shadow-sm sm:p-8"
+                className="relative rounded-[1.5rem] border p-4 shadow-sm sm:p-6"
                 style={{
                   backgroundColor: theme.bgSoft,
                   borderColor: theme.border,
@@ -114,14 +111,14 @@ export default function HomePage() {
               >
                 <div className="flex items-center justify-between gap-3">
                   <span
-                    className="text-xs font-bold uppercase tracking-[0.15em]"
+                    className="text-[11px] font-bold uppercase tracking-[0.15em] sm:text-xs"
                     style={{ color: theme.textMid }}
                   >
                     Our guiding motto
                   </span>
 
                   <span
-                    className="rounded-full px-3 py-1 text-xs font-bold"
+                    className="rounded-full px-3 py-1 text-[11px] font-bold sm:text-xs"
                     style={{
                       color: theme.primary,
                       backgroundColor: theme.card,
@@ -131,7 +128,7 @@ export default function HomePage() {
                   </span>
                 </div>
 
-                <div className="mx-auto my-7 flex aspect-square w-full max-w-[18rem] items-center justify-center overflow-hidden rounded-[1.5rem] bg-white p-3 sm:my-9 sm:p-5">
+                <div className="mx-auto my-5 flex aspect-square w-full max-w-[16rem] items-center justify-center overflow-hidden rounded-[1.25rem] bg-white p-3 sm:my-6 sm:p-4">
                   <img
                     src="/logo/static/P-Reach_Out_Int_Brand.svg"
                     alt="P-REACH OUT International reaching-hands brand artwork"
@@ -142,7 +139,7 @@ export default function HomePage() {
                 </div>
 
                 <p
-                  className="text-center text-2xl sm:text-3xl"
+                  className="text-center text-xl sm:text-2xl"
                   style={{
                     fontFamily: '"Story Script", cursive',
                     color: theme.primary,
@@ -152,6 +149,7 @@ export default function HomePage() {
                 </p>
               </div>
             </div>
+
           </div>
         </section>
       </main>
