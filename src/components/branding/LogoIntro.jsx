@@ -1,4 +1,3 @@
-
 import { useCallback, useEffect, useRef, useState } from "react";
 
 const INTRO_DURATION = 5000;
@@ -74,11 +73,11 @@ export default function LogoIntro({ onComplete }) {
   }, [finishIntro, reduceMotion]);
 
   const mediaStyle = {
-    width: "min(78vw, 58svh, 36rem)",
+    width: "min(65vw, 48svh, 27rem)",
     aspectRatio: "1 / 1",
     flexShrink: 0,
     objectFit: "contain",
-    borderRadius: "1.5rem",
+    borderRadius: "1.25rem",
     overflow: "hidden",
   };
 
@@ -86,8 +85,8 @@ export default function LogoIntro({ onComplete }) {
     <main
       className="flex min-h-[100vh] min-h-[100svh] w-full
                  flex-col items-center justify-start
-                 overflow-x-hidden px-4 pb-8 pt-8
-                 sm:px-8 sm:pb-10 sm:pt-10"
+                 overflow-x-hidden px-4 pb-6 pt-6
+                 sm:px-6 sm:pb-8 sm:pt-8"
       style={{
         backgroundColor: "var(--bg, #ffffff)",
         color: "var(--text, #1a1a2e)",
@@ -95,7 +94,6 @@ export default function LogoIntro({ onComplete }) {
       aria-label="P-Reach Out International introduction"
     >
       <div className="flex w-full flex-col items-center">
-        {/* Rounded animation — no additional outer frame */}
         {reduceMotion || videoFailed ? (
           <img
             src={BRAND_LOGO}
@@ -107,7 +105,7 @@ export default function LogoIntro({ onComplete }) {
           />
         ) : (
           <video
-            className="block max-w-full rounded-3xl"
+            className="block max-w-full rounded-2xl"
             style={mediaStyle}
             src={INTRO_VIDEO}
             poster={BRAND_LOGO}
@@ -126,13 +124,11 @@ export default function LogoIntro({ onComplete }) {
           />
         )}
 
-        {/* Motto positioned lower beneath the logo */}
         <p
-          className="mt-10 max-w-full text-center leading-tight
-                     sm:mt-14"
+          className="mt-6 max-w-full text-center leading-tight sm:mt-8"
           style={{
             fontFamily: '"Story Script", cursive',
-            fontSize: "clamp(1.8rem, 4.5vw, 3.2rem)",
+            fontSize: "clamp(1.5rem, 3.5vw, 2.5rem)",
             color: "var(--primary, #c41e3a)",
             overflowWrap: "anywhere",
           }}
@@ -140,16 +136,15 @@ export default function LogoIntro({ onComplete }) {
           A Friend Stays There
         </p>
 
-        {/* Skip control, separated from the motto */}
         <button
           type="button"
           onClick={finishIntro}
-          className="mt-10 rounded-full px-5 py-2 text-sm
+          className="mt-7 rounded-full px-4 py-2 text-xs
                      underline underline-offset-4
                      transition-opacity hover:opacity-70
                      focus-visible:outline-2
                      focus-visible:outline-offset-4
-                     sm:mt-12"
+                     sm:mt-9"
           style={{
             color: "var(--text-mid, #6b7280)",
           }}

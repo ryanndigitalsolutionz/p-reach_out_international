@@ -1,9 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useTheme } from "../../contexts/ThemeContext.jsx";
+import {
+  LuChevronDown,
+  LuHeartHandshake,
+  LuMenu,
+  LuX,
+} from "react-icons/lu";
 
+import { useTheme } from "../../contexts/ThemeContext.jsx";
 import BrandLogo from "../branding/BrandLogo.jsx";
-import HamburgerIcon from "./HamburgerIcon.jsx";
 import Sidebar from "./Sidebar.jsx";
 import ThemeSelector from "./ThemeSelector.jsx";
 
@@ -68,7 +73,7 @@ export default function Header() {
   return (
     <>
       <header
-        className="sticky top-0 z-50 px-2 py-2 sm:px-4 lg:px-6"
+        className="sticky top-0 z-50 px-2 py-1 sm:px-4 lg:px-5"
         style={{
           backgroundColor: theme.navBg,
           borderBottom: `1px solid ${theme.border}`,
@@ -76,7 +81,7 @@ export default function Header() {
         }}
       >
         <div
-          className="mx-auto flex max-w-6xl items-center justify-between gap-2 rounded-full border px-3 py-1.5 sm:gap-4 sm:px-4"
+          className="mx-auto flex max-w-6xl items-center justify-between gap-2 rounded-full border px-3 py-1 sm:gap-3 sm:px-4"
           style={{
             backgroundColor: theme.card,
             borderColor: theme.border,
@@ -122,18 +127,13 @@ export default function Header() {
                   >
                     {item.label}
 
-                    <svg
-                      viewBox="0 0 20 20"
-                      className={`h-3 w-3 transition-transform ${
+                    <LuChevronDown
+                      size={13}
+                      className={`transition-transform ${
                         isOpen ? "rotate-180" : ""
                       }`}
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
                       aria-hidden="true"
-                    >
-                      <path d="m5 7 5 5 5-5" />
-                    </svg>
+                    />
                   </button>
 
                   {isOpen && (
@@ -154,10 +154,7 @@ export default function Header() {
                           role="menuitem"
                           onClick={closeNavigation}
                           className="block rounded-xl px-4 py-3 text-sm font-medium no-underline transition hover:opacity-70"
-                          style={{
-                            color: theme.text,
-                            backgroundColor: "transparent",
-                          }}
+                          style={{ color: theme.text }}
                         >
                           {link.label}
                         </Link>
@@ -181,20 +178,29 @@ export default function Header() {
               className="inline-flex min-h-9 items-center justify-center gap-1.5 rounded-full px-3 py-2 text-xs font-bold text-white no-underline transition-transform hover:-translate-y-0.5 sm:px-4"
               style={{ backgroundColor: theme.primary }}
             >
-              <span aria-hidden="true">♥</span>
+              <LuHeartHandshake size={17} strokeWidth={2} />
               <span>Donate</span>
             </Link>
 
-            <div className="xl:hidden">
-              <HamburgerIcon
-                open={mobileOpen}
-                onClick={() => setMobileOpen((previous) => !previous)}
-                style={{
-                  borderColor: theme.border,
-                  color: theme.text,
-                }}
-              />
-            </div>
+            {/* Mobile navigation toggle */}
+            <button
+              type="button"
+              onClick={() => setMobileOpen((previous) => !previous)}
+              aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-main-navigation"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition hover:opacity-75 xl:hidden"
+              style={{
+                borderColor: theme.border,
+                color: theme.text,
+              }}
+            >
+              {mobileOpen ? (
+                <LuX size={19} />
+              ) : (
+                <LuMenu size={19} />
+              )}
+            </button>
           </div>
         </div>
       </header>
