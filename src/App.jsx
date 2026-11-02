@@ -1,9 +1,11 @@
-
 import { useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import LogoIntro from "./components/branding/LogoIntro.jsx";
+
 import HomePage from "./features/public-site/HomePage.jsx";
+import AboutPage from "./features/public-site/AboutPage.jsx";
+import OurOffer from "./features/public-site/OurOffer.jsx";
 
 export default function App() {
   const [introComplete, setIntroComplete] = useState(false);
@@ -19,9 +21,36 @@ export default function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      {/* Main public homepage */}
+      <Route
+        path="/"
+        element={
+          <>
+            <HomePage />
+            <AboutPage embedded />
+            <OurOffer embedded />
+          </>
+        }
+      />
 
-      {/* Replace this fallback as more routes are implemented. */}
+      {/* Standalone public pages */}
+      <Route
+        path="/about"
+        element={<AboutPage />}
+      />
+
+      <Route
+        path="/our-offer"
+        element={<OurOffer />}
+      />
+
+      {/* Header navigation compatibility */}
+      <Route
+        path="/services"
+        element={<OurOffer />}
+      />
+
+      {/* Fallback */}
       <Route
         path="*"
         element={<Navigate to="/" replace />}
