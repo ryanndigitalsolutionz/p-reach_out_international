@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -5,6 +6,7 @@ import {
   LuHeartHandshake,
   LuMenu,
   LuX,
+  LuLogIn,
 } from "react-icons/lu";
 
 import { useTheme } from "../../contexts/ThemeContext.jsx";
@@ -165,12 +167,30 @@ export default function Header() {
             })}
           </nav>
 
-          {/* Theme Selector and Donate */}
-          <div className="flex shrink-0 items-center gap-2">
+          {/* Account and Primary Actions */}
+          <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
             <div className="hidden sm:block">
               <ThemeSelector />
             </div>
 
+            {/* Sign In */}
+            <Link
+              to="/login"
+              onClick={closeNavigation}
+              aria-label="Sign in to P-REACH OUT"
+              title="Sign In"
+              className="inline-flex min-h-9 items-center justify-center gap-1.5 rounded-full border px-2.5 py-2 text-xs font-bold no-underline sm:px-4"
+              style={{
+                backgroundColor: "transparent",
+                borderColor: theme.border,
+                color: theme.text,
+              }}
+            >
+              <LuLogIn size={16} />
+              <span className="hidden sm:inline">Sign In</span>
+            </Link>
+
+            {/* Donate */}
             <Link
               to="/donations"
               onClick={closeNavigation}
@@ -204,7 +224,7 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Reserves space for the fixed header */}
+      {/* Space reserved for the fixed header */}
       <div className="h-[68px]" aria-hidden="true" />
 
       <Sidebar
