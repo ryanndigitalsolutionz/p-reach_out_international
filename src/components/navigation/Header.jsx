@@ -73,15 +73,15 @@ export default function Header() {
   return (
     <>
       <header
-        className="sticky top-0 z-50 px-2 py-1 sm:px-4 lg:px-5"
+        className="fixed inset-x-0 top-0 z-50 px-2 py-1 sm:px-4 lg:px-5"
         style={{
-          backgroundColor: theme.navBg,
-          borderBottom: `1px solid ${theme.border}`,
-          backdropFilter: "blur(16px)",
+          backgroundColor: "transparent",
+          border: "none",
+          pointerEvents: "none",
         }}
       >
         <div
-          className="mx-auto flex max-w-6xl items-center justify-between gap-2 rounded-full border px-3 py-1 sm:gap-3 sm:px-4"
+          className="pointer-events-auto mx-auto flex max-w-6xl items-center justify-between gap-2 rounded-full border px-3 py-1 sm:gap-3 sm:px-4"
           style={{
             backgroundColor: theme.card,
             borderColor: theme.border,
@@ -90,13 +90,14 @@ export default function Header() {
         >
           <BrandLogo onClick={closeNavigation} />
 
-          {/* Desktop navigation */}
+          {/* Desktop Navigation */}
           <nav
             className="hidden items-center gap-3 xl:flex"
             aria-label="Main navigation"
           >
             {NAVIGATION_ITEMS.map((item) => {
               const isOpen = openDropdown === item.label;
+
               const menuId = `navigation-${item.label
                 .toLowerCase()
                 .replaceAll(" ", "-")}`;
@@ -122,16 +123,14 @@ export default function Header() {
                         setOpenDropdown(null);
                       }
                     }}
-                    className="flex items-center gap-1 whitespace-nowrap py-2 text-xs font-semibold transition-opacity hover:opacity-65"
+                    className="flex items-center gap-1 whitespace-nowrap py-2 text-xs font-semibold"
                     style={{ color: theme.navText }}
                   >
                     {item.label}
 
                     <LuChevronDown
                       size={13}
-                      className={`transition-transform ${
-                        isOpen ? "rotate-180" : ""
-                      }`}
+                      className={isOpen ? "rotate-180" : ""}
                       aria-hidden="true"
                     />
                   </button>
@@ -153,7 +152,7 @@ export default function Header() {
                           to={link.to}
                           role="menuitem"
                           onClick={closeNavigation}
-                          className="block rounded-xl px-4 py-3 text-sm font-medium no-underline transition hover:opacity-70"
+                          className="block rounded-xl px-4 py-3 text-sm font-medium no-underline"
                           style={{ color: theme.text }}
                         >
                           {link.label}
@@ -166,7 +165,7 @@ export default function Header() {
             })}
           </nav>
 
-          {/* Theme and primary action */}
+          {/* Theme Selector and Donate */}
           <div className="flex shrink-0 items-center gap-2">
             <div className="hidden sm:block">
               <ThemeSelector />
@@ -175,21 +174,21 @@ export default function Header() {
             <Link
               to="/donations"
               onClick={closeNavigation}
-              className="inline-flex min-h-9 items-center justify-center gap-1.5 rounded-full px-3 py-2 text-xs font-bold text-white no-underline transition-transform hover:-translate-y-0.5 sm:px-4"
+              className="inline-flex min-h-9 items-center justify-center gap-1.5 rounded-full px-3 py-2 text-xs font-bold text-white no-underline sm:px-4"
               style={{ backgroundColor: theme.primary }}
             >
               <LuHeartHandshake size={17} strokeWidth={2} />
               <span>Donate</span>
             </Link>
 
-            {/* Mobile navigation toggle */}
+            {/* Mobile Navigation Toggle */}
             <button
               type="button"
               onClick={() => setMobileOpen((previous) => !previous)}
               aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
               aria-expanded={mobileOpen}
               aria-controls="mobile-main-navigation"
-              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition hover:opacity-75 xl:hidden"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border xl:hidden"
               style={{
                 borderColor: theme.border,
                 color: theme.text,
@@ -204,6 +203,9 @@ export default function Header() {
           </div>
         </div>
       </header>
+
+      {/* Reserves space for the fixed header */}
+      <div className="h-[68px]" aria-hidden="true" />
 
       <Sidebar
         isOpen={mobileOpen}

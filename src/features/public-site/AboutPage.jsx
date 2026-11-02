@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 import {
   LuHeartHandshake,
   LuEye,
@@ -8,6 +8,7 @@ import {
   LuUsers,
   LuBookOpen,
   LuHeart,
+  LuArrowUpRight,
 } from "react-icons/lu";
 
 import { useTheme } from "../../contexts/ThemeContext.jsx";
@@ -126,8 +127,6 @@ function AboutPage({ embedded = false }) {
         {/* Our Story and Founder */}
         <section className="px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
           <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:gap-14">
-
-            {/* Our Story */}
             <div>
               <span
                 className="text-xs font-bold uppercase tracking-[0.15em]"
@@ -178,7 +177,7 @@ function AboutPage({ embedded = false }) {
               </div>
             </div>
 
-            {/* Founder portrait */}
+            {/* Founder Portrait */}
             <figure className="mx-auto w-full max-w-[19rem] text-center">
               <div
                 className="overflow-hidden rounded-2xl border shadow-sm"
@@ -360,6 +359,53 @@ function AboutPage({ embedded = false }) {
                 );
               })}
             </div>
+          </div>
+        </section>
+
+        {/* Membership CTA */}
+        <section
+          className="px-4 pb-16 sm:px-6 sm:pb-20 lg:px-8"
+        >
+          <div
+            className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 rounded-3xl border p-7 sm:p-10 lg:flex-row lg:items-center"
+            style={{
+              backgroundColor: theme.bgSoft,
+              borderColor: theme.border,
+            }}
+          >
+            <div className="max-w-2xl">
+              <span
+                className="text-xs font-bold uppercase tracking-[0.15em]"
+                style={{ color: theme.primary }}
+              >
+                Become Part of Our Community
+              </span>
+
+              <h2
+                className="mt-3 text-2xl leading-tight sm:text-3xl"
+                style={{ fontFamily: '"Carter One", sans-serif' }}
+              >
+                There's a Place for You Here.
+              </h2>
+
+              <p
+                className="mt-3 text-sm leading-7 sm:text-base"
+                style={{ color: theme.textMid }}
+              >
+                Join the P-REACH OUT community and be part of
+                a space built around compassion, connection,
+                and encouragement.
+              </p>
+            </div>
+
+            <Link
+              to="/signup"
+              className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-full px-7 py-3 text-sm font-bold text-white no-underline"
+              style={{ backgroundColor: theme.primary }}
+            >
+              Become a Member
+              <LuArrowUpRight size={18} />
+            </Link>
           </div>
         </section>
       </main>
