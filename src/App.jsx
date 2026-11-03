@@ -16,6 +16,8 @@ import ContactPage from "./features/public-site/ContactPage.jsx";
 
 import Dashboard from "./features/member-access/Dashboard.jsx";
 import CheckInSummary from "./features/member-access/check-in/Check-In_Summary.jsx";
+import Questionnaire from "./features/member-access/check-in/Questionnaire.jsx";
+import BookedSession from "./features/member-access/check-in/BookedSession.jsx";
 
 import Login from "./utils/authentication/Login.jsx";
 import Signup from "./utils/authentication/Signup.jsx";
@@ -52,11 +54,8 @@ function App() {
 
       {/* Public Information Pages */}
       <Route path="/about" element={<AboutPage />} />
-
       <Route path="/our-offer" element={<OurOffer />} />
-
       <Route path="/services" element={<OurOffer />} />
-
       <Route path="/library" element={<LibraryPage />} />
       <Route path="/programs" element={<ProgramsPage />} />
       <Route path="/faq" element={<FAQ />} />
@@ -79,7 +78,19 @@ function App() {
 
       {/* Member Access */}
       <Route path="/dashboard" element={<Dashboard />} />
+
+      {/* Check-In */}
       <Route path="/check-in" element={<CheckInSummary />} />
+      <Route
+        path="/check-in/questionnaire"
+        element={<Questionnaire />}
+      />
+      <Route
+        path="/check-in/booked-sessions"
+        element={<BookedSession />}
+      />
+
+      {/* Crisis Support */}
       <Route path="/crisis" element={<CrisisPage />} />
 
       {/* Fallback */}
