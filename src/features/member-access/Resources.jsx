@@ -3,30 +3,30 @@ import { MapContainer, TileLayer, Marker, Popup, Circle, useMap } from "react-le
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import {
-  MapPin,
-  Phone,
-  Globe,
-  Search,
-  Building2,
-  Heart,
-  LocateFixed,
-  Map as MapIcon,
-  BookOpen,
-  ExternalLink,
-  ShieldCheck,
-  Wine,
-  Pill,
-  Brain,
-  RefreshCcw,
-  Users,
-  Dices,
-  Sparkles,
-  Navigation,
-  PlayCircle,
-  Film,
-  HeartHandshake,
-  Clock,
-} from "lucide-react";
+  LuMapPin,
+  LuPhone,
+  LuGlobe,
+  LuSearch,
+  LuBuilding2,
+  LuHeart,
+  LuLocateFixed,
+  LuMap as MapIcon,
+  LuBookOpen,
+  LuExternalLink,
+  LuShieldCheck,
+  LuWine,
+  LuPill,
+  LuBrain,
+  LuRefreshCcw,
+  LuUsers,
+  LuDices,
+  LuSparkles,
+  LuNavigation,
+  LuCirclePlay,
+  LuFilm,
+  LuHeartHandshake,
+  LuClock,
+} from "react-icons/lu";
 
 const RESOURCES = [
   // Nairobi & Kiambu (Central)
@@ -1161,7 +1161,7 @@ const LIBRARY_TOPICS = [
   {
     id: "alcohol",
     label: "Alcohol Use",
-    Icon: Wine,
+    Icon: LuWine,
     color: "text-amber-600",
     bg: "bg-amber-50",
     badge: "bg-amber-50 text-amber-700 border-amber-100",
@@ -1200,7 +1200,7 @@ const LIBRARY_TOPICS = [
   {
     id: "drugs",
     label: "Drugs & Substance Use",
-    Icon: Pill,
+    Icon: LuPill,
     color: "text-cyan-600",
     bg: "bg-cyan-50",
     badge: "bg-cyan-50 text-cyan-700 border-cyan-100",
@@ -1239,7 +1239,7 @@ const LIBRARY_TOPICS = [
   {
     id: "mental-health",
     label: "Mental Health & Co-Occurring",
-    Icon: Brain,
+    Icon: LuBrain,
     color: "text-violet-600",
     bg: "bg-violet-50",
     badge: "bg-violet-50 text-violet-700 border-violet-100",
@@ -1271,7 +1271,7 @@ const LIBRARY_TOPICS = [
   {
     id: "relapse",
     label: "Relapse Prevention & Coping Skills",
-    Icon: RefreshCcw,
+    Icon: LuRefreshCcw,
     color: "text-[#0D6E64]",
     bg: "bg-teal-50",
     badge: "bg-teal-50 text-teal-700 border-teal-100",
@@ -1303,7 +1303,7 @@ const LIBRARY_TOPICS = [
   {
     id: "family",
     label: "Family, Relationships & Codependency",
-    Icon: Users,
+    Icon: LuUsers,
     color: "text-[#8a2340]",
     bg: "bg-rose-50",
     badge: "bg-rose-50 text-rose-700 border-rose-100",
@@ -1335,7 +1335,7 @@ const LIBRARY_TOPICS = [
   {
     id: "gambling",
     label: "Gambling & Behavioral Addictions",
-    Icon: Dices,
+    Icon: LuDices,
     color: "text-emerald-600",
     bg: "bg-emerald-50",
     badge: "bg-emerald-50 text-emerald-700 border-emerald-100",
@@ -1370,7 +1370,7 @@ const VIDEO_LIBRARY = [
   {
     id: "understanding",
     label: "Understanding Addiction",
-    Icon: Brain,
+    Icon: LuBrain,
     color: "text-violet-600",
     bg: "bg-violet-50",
     badge: "bg-violet-50 text-violet-700 border-violet-100",
@@ -1405,7 +1405,7 @@ const VIDEO_LIBRARY = [
   {
     id: "stories",
     label: "Real Recovery Stories",
-    Icon: Heart,
+    Icon: LuHeart,
     color: "text-[#8a2340]",
     bg: "bg-rose-50",
     badge: "bg-rose-50 text-rose-700 border-rose-100",
@@ -1440,7 +1440,7 @@ const VIDEO_LIBRARY = [
   {
     id: "skills",
     label: "Coping Skills & Mindfulness",
-    Icon: Sparkles,
+    Icon: LuSparkles,
     color: "text-[#0D6E64]",
     bg: "bg-teal-50",
     badge: "bg-teal-50 text-teal-700 border-teal-100",
@@ -1475,7 +1475,7 @@ const VIDEO_LIBRARY = [
   {
     id: "family",
     label: "For Family & Friends",
-    Icon: HeartHandshake,
+    Icon: LuHeartHandshake,
     color: "text-cyan-600",
     bg: "bg-cyan-50",
     badge: "bg-cyan-50 text-cyan-700 border-cyan-100",
@@ -1502,7 +1502,7 @@ const VIDEO_LIBRARY = [
   {
     id: "kenya",
     label: "Kenya & Swahili Voices",
-    Icon: MapPin,
+    Icon: LuMapPin,
     color: "text-emerald-600",
     bg: "bg-emerald-50",
     badge: "bg-emerald-50 text-emerald-700 border-emerald-100",
@@ -1744,7 +1744,7 @@ export default function Resources() {
               : "text-[#4A544C] hover:text-[#12302E]"
           }`}
         >
-          <BookOpen className="w-4 h-4" /> Recovery Reading Library
+          <LuBookOpen className="w-4 h-4" /> Recovery Reading Library
         </button>
         <button
           onClick={() => setActiveSection("videos")}
@@ -1754,7 +1754,7 @@ export default function Resources() {
               : "text-[#4A544C] hover:text-[#12302E]"
           }`}
         >
-          <Film className="w-4 h-4" /> Video Library
+          <LuFilm className="w-4 h-4" /> Video Library
         </button>
       </div>
 
@@ -1762,7 +1762,7 @@ export default function Resources() {
         <>
           <div className="flex gap-3 flex-wrap items-center">
             <div className="relative flex-1 min-w-[200px]">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#4A544C]/70" />
+              <LuSearch className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#4A544C]/70" />
               <input
                 type="text"
                 placeholder="Search by name, county, or type..."
@@ -1819,7 +1819,7 @@ export default function Resources() {
               disabled={locating}
               className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-white bg-[#0D6E64] hover:brightness-110 active:scale-[0.98] transition-all duration-150 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              <LocateFixed className="w-4 h-4" />
+              <LuLocateFixed className="w-4 h-4" />
               {locating ? "Locating…" : userLocation ? "Update my location" : "Centers near me"}
             </button>
 
@@ -1971,16 +1971,16 @@ export default function Resources() {
                     {selected === r.id && (
                       <div className="space-y-1.5 pt-2 border-t border-[#12302E]/10 mt-2">
                         <div className="flex items-start gap-1.5 text-xs text-[#4A544C]">
-                          <MapPin className="w-3 h-3 flex-shrink-0 mt-0.5" /> {r.address}
+                          <LuMapPin className="w-3 h-3 flex-shrink-0 mt-0.5" /> {r.address}
                         </div>
                         <div className="flex items-center gap-1.5 text-xs text-[#4A544C]">
-                          <Building2 className="w-3 h-3 flex-shrink-0" /> {r.type}
+                          <LuBuilding2 className="w-3 h-3 flex-shrink-0" /> {r.type}
                         </div>
                         <div className="flex gap-2 pt-1 flex-wrap" onClick={(e) => e.stopPropagation()}>
                           {r.phone && (
                             <a href={`tel:${r.phone}`} className="flex-1 min-w-[110px]">
                               <span className="flex items-center justify-center gap-1 h-8 rounded-lg text-xs font-medium text-white bg-[#0D6E64] hover:brightness-110 transition-colors cursor-pointer">
-                                <Phone className="w-3 h-3" /> {r.phone}
+                                <LuPhone className="w-3 h-3" /> {r.phone}
                               </span>
                             </a>
                           )}
@@ -1991,13 +1991,13 @@ export default function Resources() {
                             className="flex-1 min-w-[110px]"
                           >
                             <span className="flex items-center justify-center gap-1 h-8 rounded-lg text-xs font-medium text-[#0D6E64] bg-[#D8E8E4] hover:bg-[#D8E8E4]/70 transition-colors cursor-pointer">
-                              <Navigation className="w-3 h-3" /> Directions
+                              <LuNavigation className="w-3 h-3" /> Directions
                             </span>
                           </a>
                           {r.website && (
                             <a href={r.website} target="_blank" rel="noopener noreferrer" className="flex-1 min-w-[110px]">
                               <span className="flex items-center justify-center gap-1 h-8 rounded-lg text-xs font-medium text-[#0D6E64] bg-[#D8E8E4] hover:bg-[#D8E8E4]/70 transition-colors cursor-pointer">
-                                <Globe className="w-3 h-3" /> Website
+                                <LuGlobe className="w-3 h-3" /> Website
                               </span>
                             </a>
                           )}
@@ -2026,7 +2026,7 @@ export default function Resources() {
 
           <div className="bg-[#FCE7EF] border border-[#c2417a]/25 rounded-2xl p-4 flex items-center gap-4 flex-wrap">
             <div className="w-10 h-10 rounded-xl bg-[#c2417a]/15 flex items-center justify-center flex-shrink-0">
-              <Heart className="w-5 h-5 text-[#c2417a]" />
+              <LuHeart className="w-5 h-5 text-[#c2417a]" />
             </div>
             <div className="flex-1 min-w-[200px]">
               <p className="font-semibold text-[#8a2340] text-sm">NACADA National Helpline</p>
@@ -2034,7 +2034,7 @@ export default function Resources() {
             </div>
             <a href="tel:1192">
               <span className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-white bg-[#c2417a] hover:brightness-110 transition-colors cursor-pointer">
-                <Phone className="w-3.5 h-3.5" /> Call 1192
+                <LuPhone className="w-3.5 h-3.5" /> Call 1192
               </span>
             </a>
           </div>
@@ -2044,7 +2044,7 @@ export default function Resources() {
       {activeSection === "library" && (
         <div className="space-y-5">
           <div className="flex items-start gap-3 bg-[#D8E8E4]/50 border border-[#0D6E64]/15 rounded-2xl p-4">
-            <ShieldCheck className="w-5 h-5 text-[#0D6E64] flex-shrink-0 mt-0.5" />
+            <LuShieldCheck className="w-5 h-5 text-[#0D6E64] flex-shrink-0 mt-0.5" />
             <p className="text-sm text-[#4A544C]">
               Every item below comes from an established public-health body, hospital
               foundation, or long-running peer-support fellowship — never a random blog. Safe
@@ -2054,7 +2054,7 @@ export default function Resources() {
 
           <div className="flex gap-3 flex-wrap items-center">
             <div className="relative flex-1 min-w-[200px]">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#4A544C]/70" />
+              <LuSearch className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#4A544C]/70" />
               <input
                 type="text"
                 placeholder="Search readings by title or topic..."
@@ -2119,7 +2119,7 @@ export default function Resources() {
                   >
                     <div className="flex items-start justify-between gap-2 mb-1">
                       <h3 className="font-semibold text-[#12302E] text-sm leading-snug">{r.title}</h3>
-                      <ExternalLink className="w-3.5 h-3.5 text-[#4A544C]/40 group-hover:text-[#0D6E64] flex-shrink-0 mt-0.5 transition-colors" />
+                      <LuExternalLink className="w-3.5 h-3.5 text-[#4A544C]/40 group-hover:text-[#0D6E64] flex-shrink-0 mt-0.5 transition-colors" />
                     </div>
                     <div className="flex items-center gap-1.5 flex-wrap mb-2">
                       <span className={`text-xs px-1.5 py-0.5 rounded-full border ${topic.badge}`}>{r.format}</span>
@@ -2133,7 +2133,7 @@ export default function Resources() {
           ))}
 
           <div className="bg-[#EFEAE0] border border-[#12302E]/10 rounded-2xl p-5 flex items-start gap-3">
-            <Sparkles className="w-5 h-5 text-[#0D6E64] flex-shrink-0 mt-0.5" />
+            <LuSparkles className="w-5 h-5 text-[#0D6E64] flex-shrink-0 mt-0.5" />
             <p className="text-sm text-[#4A544C]">
               Reading can help you understand your journey, but it isn't a substitute for
               treatment or crisis support. If you're struggling right now, visit{" "}
@@ -2148,7 +2148,7 @@ export default function Resources() {
       {activeSection === "videos" && (
         <div className="space-y-5">
           <div className="flex items-start gap-3 bg-[#D8E8E4]/50 border border-[#0D6E64]/15 rounded-2xl p-4">
-            <ShieldCheck className="w-5 h-5 text-[#0D6E64] flex-shrink-0 mt-0.5" />
+            <LuShieldCheck className="w-5 h-5 text-[#0D6E64] flex-shrink-0 mt-0.5" />
             <p className="text-sm text-[#4A544C]">
               For anyone who'd rather watch than read. Every video comes from an established
               organization — TED, an academic research center, a government health agency, or a
@@ -2159,7 +2159,7 @@ export default function Resources() {
 
           <div className="flex gap-3 flex-wrap items-center">
             <div className="relative flex-1 min-w-[200px]">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#4A544C]/70" />
+              <LuSearch className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#4A544C]/70" />
               <input
                 type="text"
                 placeholder="Search videos by title or topic..."
@@ -2224,15 +2224,15 @@ export default function Resources() {
                   >
                     <div className="flex items-start justify-between gap-2 mb-1">
                       <h3 className="font-semibold text-[#12302E] text-sm leading-snug flex items-start gap-1.5">
-                        <PlayCircle className="w-4 h-4 text-[#0D6E64] flex-shrink-0 mt-0.5" />
+                        <LuCirclePlay className="w-4 h-4 text-[#0D6E64] flex-shrink-0 mt-0.5" />
                         <span>{v.title}</span>
                       </h3>
-                      <ExternalLink className="w-3.5 h-3.5 text-[#4A544C]/40 group-hover:text-[#0D6E64] flex-shrink-0 mt-0.5 transition-colors" />
+                      <LuExternalLink className="w-3.5 h-3.5 text-[#4A544C]/40 group-hover:text-[#0D6E64] flex-shrink-0 mt-0.5 transition-colors" />
                     </div>
                     <div className="flex items-center gap-1.5 flex-wrap mb-2 ml-[22px]">
                       <span className={`text-xs px-1.5 py-0.5 rounded-full border ${topic.badge}`}>{v.format}</span>
                       <span className="text-xs text-[#4A544C]/70 flex items-center gap-1">
-                        <Clock className="w-3 h-3" /> {v.duration}
+                        <LuClock className="w-3 h-3" /> {v.duration}
                       </span>
                     </div>
                     <p className="text-xs text-[#4A544C]/70 ml-[22px] mb-1">{v.publisher}</p>
@@ -2244,7 +2244,7 @@ export default function Resources() {
           ))}
 
           <div className="bg-[#EFEAE0] border border-[#12302E]/10 rounded-2xl p-5 flex items-start gap-3">
-            <HeartHandshake className="w-5 h-5 text-[#0D6E64] flex-shrink-0 mt-0.5" />
+            <LuHeartHandshake className="w-5 h-5 text-[#0D6E64] flex-shrink-0 mt-0.5" />
             <p className="text-sm text-[#4A544C]">
               Videos can help you feel less alone and better understand what you're going
               through, but they aren't a substitute for treatment or crisis support. If you're
