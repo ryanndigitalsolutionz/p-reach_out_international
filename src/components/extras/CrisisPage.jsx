@@ -12,8 +12,8 @@ import {
   LuInfo,
 } from "react-icons/lu";
 
-import { useTheme } from "../contexts/ThemeContext.jsx";
-import { MemberShell } from "../features/member-access/Dashboard.jsx";
+import { useTheme } from "../../contexts/ThemeContext.jsx";
+import { MemberShell } from "../../features/member-access/Dashboard.jsx";
 
 const emergencyLines = [
   {

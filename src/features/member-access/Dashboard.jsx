@@ -1,333 +1,136 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
-  LuLayoutDashboard,
   LuHeart,
   LuTrendingUp,
-  LuUsers,
-  LuNewspaper,
   LuBookOpen,
   LuMapPin,
   LuHandHeart,
   LuPhoneCall,
-  LuSettings,
-  LuUser,
-  LuPanelLeftClose,
-  LuPanelLeftOpen,
-  LuMenu,
-  LuX,
-  LuArrowUpRight,
   LuCalendarCheck,
+  LuMenu,
   LuAward,
   LuLockKeyhole,
   LuSparkles,
 } from "react-icons/lu";
+import { ImExit } from "react-icons/im";
 
 import { useTheme } from "../../contexts/ThemeContext.jsx";
 import { TopBar } from "../../components/navigation/TopBar.jsx";
+import Sidebar from "../../components/navigation/Sidebar.jsx";
 
-const navigationItems = [
-  { label: "Dashboard", path: "/dashboard", icon: LuLayoutDashboard },
-  { label: "Check-in", path: "/check-in", icon: LuHeart },
-  { label: "Milestones", path: "/milestones", icon: LuTrendingUp },
-  { label: "Groups", path: "/groups", icon: LuUsers },
-  { label: "People Hub", path: "/people-hub", icon: LuUsers },
-  { label: "P-R News", path: "/p-r-news", icon: LuNewspaper },
-  { label: "Journal", path: "/journal", icon: LuBookOpen },
-  { label: "Resources", path: "/resources", icon: LuMapPin },
-  { label: "Donations", path: "/donations", icon: LuHandHeart },
-];
-
-function SidebarLink({ item, collapsed, onNavigate, theme }) {
-  const location = useLocation();
-  const Icon = item.icon;
-
-  const isActive =
-    location.pathname === item.path ||
-    location.pathname.startsWith(`${item.path}/`);
-
-  return (
-    <Link
-      to={item.path}
-      onClick={onNavigate}
-      title={collapsed ? item.label : undefined}
-      aria-current={isActive ? "page" : undefined}
-      className={`flex min-h-12 items-center gap-3 rounded-xl px-3 text-sm font-semibold no-underline transition-colors focus-visible:outline-none focus-visible:ring-2 ${
-        collapsed ? "justify-center" : ""
-      }`}
-      style={{
-        backgroundColor: isActive ? theme.bgSoft : "transparent",
-        color: isActive ? theme.primary : theme.textMid,
-        outlineColor: theme.primary,
-      }}
-    >
-      <Icon
-        size={20}
-        strokeWidth={isActive ? 2.2 : 1.8}
-        className="shrink-0"
-      />
-
-      {!collapsed && <span>{item.label}</span>}
-    </Link>
-  );
-}
-
-export function MemberSidebar({
-  collapsed = false,
-  onToggle,
-  onNavigate,
-  mobile = false,
-}) {
-  const { theme } = useTheme();
-  const location = useLocation();
-
-  const isCrisisActive =
-    location.pathname === "/crisis" ||
-    location.pathname.startsWith("/crisis/");
-
-  return (
-    <aside
-      className={`flex flex-col border-r ${
-        mobile ? "h-full w-[min(290px,86vw)]" : "h-full min-h-full"
-      }`}
-      style={{
-        width: mobile ? undefined : collapsed ? "76px" : "264px",
-        backgroundColor: theme.card,
-        borderColor: theme.border,
-      }}
-    >
-      {/* Sidebar heading */}
-      <div
-        className={`flex min-h-[76px] items-center border-b px-4 ${
-          collapsed && !mobile
-            ? "justify-center"
-            : "justify-between"
-        }`}
-        style={{ borderColor: theme.border }}
-      >
-        {(!collapsed || mobile) && (
-          <div className="min-w-0">
-            <p
-              className="truncate text-sm font-extrabold tracking-wide"
-              style={{ color: theme.text }}
-            >
-              P-REACH OUT
-            </p>
-
-            <p
-              className="mt-0.5 text-xs"
-              style={{ color: theme.textMid }}
-            >
-              Member space
-            </p>
-          </div>
-        )}
-
-        {mobile ? (
-          <button
-            type="button"
-            onClick={onNavigate}
-            aria-label="Close navigation"
-            className="flex h-10 w-10 items-center justify-center rounded-xl"
-            style={{ color: theme.textMid }}
-          >
-            <LuX size={21} />
-          </button>
-        ) : (
-          <button
-            type="button"
-            onClick={onToggle}
-            aria-label={
-              collapsed ? "Expand sidebar" : "Collapse sidebar"
-            }
-            title={
-              collapsed ? "Expand sidebar" : "Collapse sidebar"
-            }
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-colors"
-            style={{
-              color: theme.textMid,
-              backgroundColor: theme.bgSoft,
-            }}
-          >
-            {collapsed ? (
-              <LuPanelLeftOpen size={19} />
-            ) : (
-              <LuPanelLeftClose size={19} />
-            )}
-          </button>
-        )}
-      </div>
-
-      {/* Main navigation */}
-      <nav
-        aria-label="Member navigation"
-        className="flex-1 space-y-1 overflow-y-auto px-3 py-5"
-      >
-        {navigationItems.map((item) => (
-          <SidebarLink
-            key={item.path}
-            item={item}
-            collapsed={collapsed && !mobile}
-            onNavigate={onNavigate}
-            theme={theme}
-          />
-        ))}
-      </nav>
-
-      {/* Persistent SOS shortcut */}
-      <div
-        className="border-t px-3 py-4"
-        style={{ borderColor: theme.border }}
-      >
-        <Link
-          to="/crisis"
-          onClick={onNavigate}
-          title={!mobile && collapsed ? "SOS Crisis Support" : undefined}
-          aria-label="SOS Crisis Support"
-          aria-current={isCrisisActive ? "page" : undefined}
-          className={`flex min-h-12 items-center gap-3 rounded-xl border px-3 text-sm font-bold no-underline transition-colors ${
-            collapsed && !mobile ? "justify-center" : ""
-          }`}
-          style={{
-            color: isCrisisActive ? "#9F1740" : theme.text,
-            backgroundColor: "rgba(200, 25, 60, 0.08)",
-            borderColor: "rgba(200, 25, 60, 0.18)",
-          }}
-        >
-          <LuPhoneCall size={20} className="shrink-0" />
-
-          {(!collapsed || mobile) && (
-            <>
-              <span className="flex-1">Crisis Support</span>
-              <span className="rounded-full bg-[#C8193C] px-2.5 py-1 text-[10px] font-extrabold tracking-wide text-white">
-                SOS
-              </span>
-            </>
-          )}
-        </Link>
-      </div>
-
-      {/* Member account shortcut */}
-      <div
-        className="border-t p-3"
-        style={{ borderColor: theme.border }}
-      >
-        <Link
-          to="/settings/profile"
-          onClick={onNavigate}
-          title={!mobile && collapsed ? "My account" : undefined}
-          className={`flex min-h-12 items-center gap-3 rounded-xl px-3 text-sm font-semibold no-underline transition-colors ${
-            collapsed && !mobile ? "justify-center" : ""
-          }`}
-          style={{ color: theme.textMid }}
-        >
-          <LuUser size={20} className="shrink-0" />
-
-          {(!collapsed || mobile) && (
-            <span className="flex-1">My account</span>
-          )}
-
-          {(!collapsed || mobile) && (
-            <LuSettings size={17} />
-          )}
-        </Link>
-      </div>
-    </aside>
-  );
-}
-
-/**
- * Shared layout for member-access pages.
- * TopBar handles crisis announcements.
- */
 export function MemberShell({ children }) {
   const { theme } = useTheme();
+  const location = useLocation();
 
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const isCrisisPage = location.pathname === "/crisis";
 
   const closeMobileSidebar = () => setMobileOpen(false);
 
   return (
     <div
-      className="flex min-h-screen flex-col overflow-x-clip"
+      className="member-access flex min-h-screen flex-col overflow-x-clip"
       style={{
         backgroundColor: theme.bg,
         color: theme.text,
+        fontFamily: "var(--font-member)",
       }}
     >
       <TopBar />
 
-      <div className="flex min-h-0 flex-1">
-        {/* Desktop sidebar */}
-        <div className="hidden shrink-0 md:block">
-          <MemberSidebar
-            collapsed={collapsed}
-            onToggle={() =>
-              setCollapsed((current) => !current)
-            }
-          />
-        </div>
-
-        {/* Mobile sidebar drawer */}
-        {mobileOpen && (
-          <>
-            <button
-              type="button"
-              aria-label="Close navigation menu"
-              onClick={closeMobileSidebar}
-              className="fixed inset-0 z-40 bg-black/40 md:hidden"
-            />
-
-            <div className="fixed inset-y-0 left-0 z-50 md:hidden">
-              <MemberSidebar
-                mobile
-                onNavigate={closeMobileSidebar}
-              />
-            </div>
-          </>
-        )}
-
-        {/* Page content */}
-        <div className="min-w-0 flex-1">
-          {/* Mobile navigation controls */}
-          <div
-            className="flex items-center justify-between border-b px-4 py-3 md:hidden"
+      {isCrisisPage ? (
+        /* Standalone Crisis Page Layout */
+        <div className="flex min-h-0 flex-1 flex-col">
+          <header
+            className="border-b px-4 py-3 sm:px-6"
             style={{
               backgroundColor: theme.card,
               borderColor: theme.border,
             }}
           >
-            <button
-              type="button"
-              onClick={() => setMobileOpen(true)}
-              className="flex min-h-10 items-center gap-2 rounded-xl px-3 text-sm font-semibold"
-              style={{
-                color: theme.text,
-                backgroundColor: theme.bgSoft,
-              }}
-            >
-              <LuMenu size={19} />
-              Navigation
-            </button>
+            <div className="mx-auto max-w-[1120px]">
+              <Link
+                to="/dashboard"
+                className="inline-flex min-h-10 items-center gap-3 rounded-xl px-3 py-2 text-sm font-bold no-underline transition-colors"
+                style={{
+                  color: theme.text,
+                  backgroundColor: theme.bgSoft,
+                }}
+              >
+                <ImExit size={18} />
+                Return to Dashboard
+              </Link>
+            </div>
+          </header>
 
-            <Link
-              to="/crisis"
-              aria-label="SOS Crisis Support"
-              className="inline-flex min-h-10 items-center gap-2 rounded-xl px-3 text-sm font-bold no-underline"
-              style={{
-                color: "#9F1740",
-                backgroundColor: "rgba(200, 25, 60, 0.09)",
-              }}
-            >
-              <LuPhoneCall size={17} />
-              SOS
-            </Link>
+          <div className="min-w-0 flex-1">
+            {children}
           </div>
-
-          {children}
         </div>
-      </div>
+      ) : (
+        /* Regular Member Application Layout */
+        <div className="flex min-h-0 flex-1">
+          {/* Desktop Sidebar */}
+          <Sidebar
+            variant="member"
+            collapsed={collapsed}
+            onToggle={() =>
+              setCollapsed((current) => !current)
+            }
+          />
+
+          {/* Mobile Sidebar Drawer */}
+          <Sidebar
+            variant="member"
+            mobile
+            isOpen={mobileOpen}
+            onClose={closeMobileSidebar}
+          />
+
+          {/* Main Content */}
+          <div className="flex min-w-0 flex-1 flex-col">
+            {/* Mobile Controls */}
+            <div
+              className="flex items-center justify-between border-b px-4 py-3 md:hidden"
+              style={{
+                backgroundColor: theme.card,
+                borderColor: theme.border,
+              }}
+            >
+              <button
+                type="button"
+                onClick={() => setMobileOpen(true)}
+                className="flex min-h-10 items-center gap-2 rounded-xl px-3 text-sm font-semibold"
+                style={{
+                  color: theme.text,
+                  backgroundColor: theme.bgSoft,
+                }}
+              >
+                <LuMenu size={19} />
+                Navigation
+              </button>
+
+              <Link
+                to="/crisis"
+                aria-label="SOS Crisis Support"
+                className="inline-flex min-h-10 items-center gap-2 rounded-xl px-3 text-sm font-bold no-underline"
+                style={{
+                  color: "#9F1740",
+                  backgroundColor: "rgba(200, 25, 60, 0.09)",
+                }}
+              >
+                <LuPhoneCall size={17} />
+                SOS
+              </Link>
+            </div>
+
+            {children}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -337,6 +140,7 @@ function getGreeting() {
 
   if (hour < 12) return "Good morning";
   if (hour < 17) return "Good afternoon";
+
   return "Good evening";
 }
 
@@ -350,16 +154,15 @@ function DashboardAction({
   return (
     <Link
       to={to}
-      className="flex min-h-14 items-center justify-center gap-2 rounded-2xl border px-5 py-3 text-sm font-bold no-underline transition-opacity hover:opacity-85"
+      className="flex min-h-14 items-center justify-center gap-3 rounded-2xl border px-5 py-3 text-sm font-bold no-underline transition-colors hover:opacity-85"
       style={{
         color: primary ? "#FFFFFF" : theme.text,
         backgroundColor: primary ? theme.primary : theme.card,
         borderColor: primary ? theme.primary : theme.border,
       }}
     >
-      <Icon size={19} />
+      <Icon size={20} />
       {children}
-      <LuArrowUpRight size={16} />
     </Link>
   );
 }
@@ -387,10 +190,10 @@ function ProgressCard({
           color: theme.primary,
         }}
       >
-        <Icon size={21} />
+        <Icon size={21} strokeWidth={1.8} />
       </div>
 
-      <h3 className="mt-5 text-base font-extrabold">
+      <h3 className="mt-5 text-base font-bold">
         {title}
       </h3>
 
@@ -403,11 +206,10 @@ function ProgressCard({
 
       <Link
         to={to}
-        className="mt-5 inline-flex items-center gap-2 text-sm font-bold no-underline transition-opacity hover:opacity-70"
+        className="mt-5 inline-flex w-fit items-center text-sm font-bold no-underline transition-opacity hover:opacity-70"
         style={{ color: theme.primary }}
       >
         {action}
-        <LuArrowUpRight size={16} />
       </Link>
     </article>
   );
@@ -439,23 +241,20 @@ function Dashboard({ member = null }) {
                 className="text-xs font-bold uppercase tracking-[0.16em]"
                 style={{ color: theme.primary }}
               >
-                Your member space
+                Your Member Space
               </p>
 
               <h1
                 id="dashboard-welcome"
-                className="mt-2 text-[clamp(1.8rem,3.5vw,2.7rem)] font-semibold leading-tight"
-                style={{
-                  color: theme.text,
-                  fontFamily: '"Anonymous Pro", monospace',
-                }}
+                className="mt-2 text-[clamp(2rem,3.5vw,3rem)] font-semibold leading-tight"
+                style={{ color: theme.text }}
               >
                 {getGreeting()}
                 {displayName ? `, ${displayName}` : ""}
               </h1>
 
               <p
-                className="mt-2 text-sm"
+                className="mt-3 text-sm"
                 style={{ color: theme.textMid }}
               >
                 {currentDate}
@@ -470,7 +269,7 @@ function Dashboard({ member = null }) {
                 borderColor: theme.border,
               }}
             >
-              <LuCalendarCheck size={17} />
+              <LuCalendarCheck size={18} />
               Your day, your pace
             </div>
           </div>
@@ -505,22 +304,19 @@ function Dashboard({ member = null }) {
               className="text-xs font-bold uppercase tracking-[0.16em]"
               style={{ color: theme.primary }}
             >
-              Your journey
+              Your Journey
             </p>
 
             <h2
               id="personal-progress"
               className="mt-2 text-2xl font-semibold sm:text-3xl"
-              style={{
-                color: theme.text,
-                fontFamily: '"Anonymous Pro", monospace',
-              }}
+              style={{ color: theme.text }}
             >
               Your Personal Progress
             </h2>
 
             <p
-              className="mt-2 max-w-2xl text-sm leading-7"
+              className="mt-3 max-w-2xl text-sm leading-7"
               style={{ color: theme.textMid }}
             >
               Take a moment to recognize the steps you're taking.
@@ -557,6 +353,7 @@ function Dashboard({ member = null }) {
             />
           </div>
 
+          {/* Privacy notice */}
           <div
             className="mt-4 flex items-start gap-3 rounded-2xl border p-4"
             style={{
@@ -574,9 +371,9 @@ function Dashboard({ member = null }) {
               className="text-xs leading-6 sm:text-sm"
               style={{ color: theme.textMid }}
             >
-              Your check-in answers and assessment details are not
-              displayed to other members. Your personal reflections
-              belong in your private member space.
+              Your check-in answers and assessment details are
+              private to you. They are not displayed to other
+              members or included in community activity.
             </p>
           </div>
         </section>
@@ -591,16 +388,13 @@ function Dashboard({ member = null }) {
               className="text-xs font-bold uppercase tracking-[0.16em]"
               style={{ color: theme.primary }}
             >
-              A little encouragement
+              A Little Encouragement
             </p>
 
             <h2
               id="encouragement-support"
               className="mt-2 text-2xl font-semibold sm:text-3xl"
-              style={{
-                color: theme.text,
-                fontFamily: '"Anonymous Pro", monospace',
-              }}
+              style={{ color: theme.text }}
             >
               Encouragement & Support
             </h2>
@@ -624,7 +418,7 @@ function Dashboard({ member = null }) {
               className="mt-4 text-2xl leading-relaxed sm:text-3xl"
               style={{
                 color: theme.text,
-                fontFamily: '"Story Script", cursive',
+                fontFamily: "var(--font-script)",
               }}
             >
               Small steps still move you forward.
