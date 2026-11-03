@@ -6,8 +6,15 @@
 }
 
 @theme {
+  /* Public website */
   --font-sans: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Carter One", ui-sans-serif, system-ui, sans-serif;
+
+  /* Member application */
+  --font-member: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-member-display: "Fraunces", Georgia, serif;
+
+  /* Shared decorative fonts */
   --font-script: "Story Script", cursive;
   --font-mono: "Anonymous Pro", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
@@ -67,17 +74,24 @@
     display: block;
   }
 
-  ::selection {
-    color: #ffffff;
-    background: var(--primary, #c41e3a);
-  }
-
   :focus-visible {
     outline: 3px solid var(--primary, #c41e3a);
     outline-offset: 3px;
   }
 }
 
+/* Member application typography */
+.member-access {
+  font-family: var(--font-member);
+}
+
+.member-access h1,
+.member-access h2,
+.member-access h3 {
+  font-family: var(--font-member-display);
+}
+
+/* WebKit scrollbar colours follow the active theme. */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;

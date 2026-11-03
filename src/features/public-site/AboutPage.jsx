@@ -13,6 +13,7 @@ import {
 
 import { useTheme } from "../../contexts/ThemeContext.jsx";
 import Header from "../../components/navigation/Header.jsx";
+import CurvedDivider from "../../components/branding/CurvedDivider.jsx";
 
 const pillars = [
   {
@@ -409,6 +410,14 @@ function AboutPage({ embedded = false }) {
           </div>
         </section>
       </main>
+
+      {/* Boundary: AboutPage → OurOffer */}
+      <CurvedDivider
+        backgroundColor={theme.bg}
+        waveColor={theme.bg}
+        domeColor={theme.primary}
+        domeOpacity={0.16}
+      />
     </div>
   );
 }

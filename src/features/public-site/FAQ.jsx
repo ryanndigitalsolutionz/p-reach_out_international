@@ -1,14 +1,14 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  LuChevronDown,
   LuCircleHelp,
   LuArrowUpRight,
 } from "react-icons/lu";
 
 import { useTheme } from "../../contexts/ThemeContext.jsx";
 import Header from "../../components/navigation/Header.jsx";
+import Accordion from "../../components/ui/Accordion.jsx";
+import CurvedDivider from "../../components/branding/CurvedDivider.jsx";
 
 const questions = [
   {
@@ -21,6 +21,7 @@ const questions = [
           built around encouragement, mental-health awareness, counselling,
           education, socioeconomic support, and humanitarian outreach.
         </p>
+
         <p>
           Founded in 2018 as P-Reach Out Kenya, it aims to help individuals
           and communities access support, learn, connect, and find
@@ -39,6 +40,7 @@ const questions = [
           He works with a team and a wider network of counsellors,
           advocates, volunteers, and community partners.
         </p>
+
         <p>
           The organization also connects with counsellors associated
           with NACADA and Befrienders Kenya to help people find
@@ -49,19 +51,22 @@ const questions = [
   },
   {
     id: "member-activities",
-    question: "How do signed-in members keep track of activities within P-REACH OUT?",
+    question:
+      "How do signed-in members keep track of activities within P-REACH OUT?",
     answer: (
       <>
         <p>
           Members use their personal dashboard as their central place
           to follow activity within the platform.
         </p>
+
         <p>
           Depending on their access and the features available, members
           can keep track of check-ins and assessments, milestones,
           group activities, P-REACH News, People Hub discussions,
           and their personal journals and resources.
         </p>
+
         <p>
           The aim is to give members a clearer view of their participation,
           progress, and connection with the wider community.
@@ -79,19 +84,23 @@ const questions = [
           education, community outreach, counselling-related support,
           and humanitarian programmes.
         </p>
+
         <p>
           The organization has different ways to contribute:
         </p>
+
         <ul className="list-disc space-y-2 pl-5">
           <li>
             <strong>Individual donations:</strong> Contributions that
             help support the organization's general work.
           </li>
+
           <li>
             <strong>Mission fundraisers:</strong> Contributions raised
             towards a particular mission or programme shared by
             P-REACH OUT.
           </li>
+
           <li>
             <strong>Sponsorships:</strong> Larger, often private
             contributions from businesses or organizations to support
@@ -99,6 +108,7 @@ const questions = [
             active collaboration.
           </li>
         </ul>
+
         <p>
           The exact use of funds depends on the purpose of the
           contribution and the needs of the supported work. For
@@ -119,34 +129,42 @@ const questions = [
           Its goal is to make participation and connection easier
           to follow in one place.
         </p>
+
         <p>Some of the platform's features include:</p>
+
         <ul className="list-disc space-y-2 pl-5">
           <li>
             <strong>Check-ins and assessments:</strong> Structured
             questions that help members reflect on mental well-being
             and sobriety-related topics.
           </li>
+
           <li>
             <strong>People Hub:</strong> A space for member
             interaction and community discussions.
           </li>
+
           <li>
             <strong>Groups:</strong> Spaces for members to participate
             in shared activities and discussions.
           </li>
+
           <li>
             <strong>Milestones and badges:</strong> Recognition of
             participation and personal progress.
           </li>
+
           <li>
             <strong>Journals and readables:</strong> Personal
             reflection and access to reading materials.
           </li>
+
           <li>
             <strong>P-REACH News:</strong> Updates about community
             activities, outreach, and missions.
           </li>
         </ul>
+
         <p>
           Features may be introduced or updated as the platform
           develops. These tools complement human support; they
@@ -166,6 +184,7 @@ const questions = [
           support individuals and communities rather than
           generate commercial profits for owners or shareholders.
         </p>
+
         <p>
           Donations, fundraising, and sponsorships help sustain
           its programmes and outreach activities. For formal
@@ -177,18 +196,22 @@ const questions = [
   },
   {
     id: "connect-members",
-    question: "How do I connect with other members who have signed in?",
+    question:
+      "How do I connect with other members who have signed in?",
     answer: (
       <>
         <p>
           After creating an account and signing in, you can explore
           the People Hub and available group spaces.
         </p>
+
         <p>
           The People Hub provides opportunities to see community
-          posts and participate in discussions, while groups under the Custom Community Circle bring
-          members together around shared interests and activities.
+          posts and participate in discussions, while groups under
+          the Custom Community Circle bring members together around
+          shared interests and activities.
         </p>
+
         <p>
           Please be considerate of other members and avoid sharing
           sensitive personal information in public discussions.
@@ -200,10 +223,15 @@ const questions = [
 
 function FAQ({ embedded = false }) {
   const { theme } = useTheme();
-  const [openQuestion, setOpenQuestion] = useState(questions[0].id);
+
+  const [openQuestion, setOpenQuestion] = useState(
+    questions[0].id
+  );
 
   const toggleQuestion = (id) => {
-    setOpenQuestion((current) => (current === id ? null : id));
+    setOpenQuestion((current) =>
+      current === id ? null : id
+    );
   };
 
   return (
@@ -218,7 +246,7 @@ function FAQ({ embedded = false }) {
       {!embedded && <Header />}
 
       <main>
-        {/* FAQ introduction */}
+        {/* FAQ Introduction */}
         <section className="px-4 pb-10 pt-14 sm:px-6 sm:pb-12 sm:pt-16 lg:px-8">
           <div className="mx-auto max-w-6xl">
             <span
@@ -258,72 +286,25 @@ function FAQ({ embedded = false }) {
           </div>
         </section>
 
-        {/* Questions and answers */}
+        {/* Animated Questions and Answers */}
         <section className="px-4 pb-16 pt-4 sm:px-6 sm:pb-20 lg:px-8">
           <div className="mx-auto max-w-4xl space-y-3">
-            {questions.map((item, index) => {
-              const isOpen = openQuestion === item.id;
-              const answerId = `faq-answer-${item.id}`;
-
-              return (
-                <article
-                  key={item.id}
-                  className="overflow-hidden rounded-2xl border"
-                  style={{
-                    backgroundColor: theme.card,
-                    borderColor: theme.border,
-                  }}
-                >
-                  <button
-                    type="button"
-                    aria-expanded={isOpen}
-                    aria-controls={answerId}
-                    onClick={() => toggleQuestion(item.id)}
-                    className="flex w-full items-center gap-4 px-4 py-5 text-left sm:px-6"
-                    style={{ color: theme.text }}
-                  >
-                    <span
-                      className="shrink-0 text-xs font-bold tracking-widest"
-                      style={{ color: theme.primary }}
-                    >
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-
-                    <span className="flex-1 text-sm font-bold sm:text-base">
-                      {item.question}
-                    </span>
-
-                    <LuChevronDown
-                      size={19}
-                      className={`shrink-0 transition-transform duration-200 ${
-                        isOpen ? "rotate-180" : ""
-                      }`}
-                      style={{ color: theme.primary }}
-                      aria-hidden="true"
-                    />
-                  </button>
-
-                  {isOpen && (
-                    <div
-                      id={answerId}
-                      className="border-t px-4 py-5 sm:px-6"
-                      style={{
-                        borderColor: theme.border,
-                        color: theme.textMid,
-                      }}
-                    >
-                      <div className="space-y-4 text-sm leading-7 sm:text-base sm:leading-8">
-                        {item.answer}
-                      </div>
-                    </div>
-                  )}
-                </article>
-              );
-            })}
+            {questions.map((item, index) => (
+              <Accordion
+                key={item.id}
+                id={`faq-${item.id}`}
+                number={String(index + 1).padStart(2, "0")}
+                title={item.question}
+                open={openQuestion === item.id}
+                onToggle={() => toggleQuestion(item.id)}
+              >
+                {item.answer}
+              </Accordion>
+            ))}
           </div>
         </section>
 
-        {/* Additional assistance */}
+        {/* Additional Assistance */}
         <section
           className="px-4 py-12 sm:px-6 sm:py-14 lg:px-8"
           style={{ backgroundColor: theme.bgSoft }}
@@ -355,6 +336,14 @@ function FAQ({ embedded = false }) {
           </div>
         </section>
       </main>
+
+      {/* Boundary: FAQ → ContactPage */}
+      <CurvedDivider
+        backgroundColor={theme.bgSoft}
+        waveColor={theme.bg}
+        domeColor={theme.primary}
+        domeOpacity={0.16}
+      />
     </div>
   );
 }

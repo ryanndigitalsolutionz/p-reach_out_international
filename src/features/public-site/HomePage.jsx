@@ -1,6 +1,10 @@
+
 import { Link } from "react-router-dom";
+import { LuSparkles, LuArrowUpRight } from "react-icons/lu";
+
 import { useTheme } from "../../contexts/ThemeContext.jsx";
 import Header from "../../components/navigation/Header.jsx";
+import CurvedDivider from "../../components/branding/CurvedDivider.jsx";
 
 export default function HomePage() {
   const { theme } = useTheme();
@@ -31,7 +35,7 @@ export default function HomePage() {
                   backgroundColor: theme.bgSoft,
                 }}
               >
-                <span aria-hidden="true">✦</span>
+                <LuSparkles size={14} aria-hidden="true" />
                 Compassion · Community · Connection
               </p>
 
@@ -75,10 +79,11 @@ export default function HomePage() {
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
                   to="/about"
-                  className="inline-flex min-h-10 items-center justify-center rounded-full px-5 py-2.5 text-xs font-bold text-white no-underline transition-transform hover:-translate-y-0.5 sm:text-sm"
+                  className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full px-5 py-2.5 text-xs font-bold text-white no-underline transition-opacity hover:opacity-85 sm:text-sm"
                   style={{ backgroundColor: theme.primary }}
                 >
-                  Learn More <span className="ml-2">↗</span>
+                  Learn More
+                  <LuArrowUpRight size={16} />
                 </Link>
 
                 <Link
@@ -149,9 +154,16 @@ export default function HomePage() {
                 </p>
               </div>
             </div>
-
           </div>
         </section>
+
+        {/* Hero / Who We Are divider */}
+        <CurvedDivider
+          backgroundColor={theme.bg}
+          waveColor={theme.bg}
+          domeColor={theme.primary}
+          domeOpacity={0.16}
+        />
       </main>
     </div>
   );

@@ -1,4 +1,3 @@
-
 import {
   LuMail,
   LuPhoneCall,
@@ -11,6 +10,7 @@ import {
 
 import { useTheme } from "../../contexts/ThemeContext.jsx";
 import Header from "../../components/navigation/Header.jsx";
+import CurvedDivider from "../../components/branding/CurvedDivider.jsx";
 
 const contactOptions = [
   {
@@ -320,6 +320,14 @@ function ContactPage({ embedded = false }) {
           </div>
         </section>
       </main>
+
+      {/* Boundary: ContactPage → SiteFooter */}
+      <CurvedDivider
+        backgroundColor={theme.bg}
+        waveColor={theme.bg}
+        domeColor={theme.primary}
+        domeOpacity={0.16}
+      />
     </div>
   );
 }

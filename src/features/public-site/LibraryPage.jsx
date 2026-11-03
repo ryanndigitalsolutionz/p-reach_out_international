@@ -7,6 +7,7 @@ import {
 
 import { useTheme } from "../../contexts/ThemeContext.jsx";
 import Header from "../../components/navigation/Header.jsx";
+import CurvedDivider from "../../components/branding/CurvedDivider.jsx";
 
 export default function LibraryPage({ embedded = false }) {
   const { theme } = useTheme();
@@ -133,6 +134,14 @@ export default function LibraryPage({ embedded = false }) {
           </div>
         </section>
       </main>
+
+      {/* Boundary: LibraryPage → ProgramsPage */}
+      <CurvedDivider
+        backgroundColor={theme.bg}
+        waveColor={theme.bg}
+        domeColor={theme.primary}
+        domeOpacity={0.16}
+      />
     </div>
   );
 }

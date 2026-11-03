@@ -1,17 +1,20 @@
-
 export default function CurvedDivider({
   waveColor = "#FFFFFF",
   domeColor = "#C8193C",
   height = "clamp(44px, 5vw, 72px)",
   domeOpacity = 1,
   flip = false,
+  backgroundColor = "transparent",
   className = "",
 }) {
   return (
     <div
       aria-hidden="true"
       className={`pointer-events-none w-full overflow-hidden leading-none ${className}`}
-      style={{ height }}
+      style={{
+        height,
+        backgroundColor,
+      }}
     >
       <svg
         viewBox="0 0 1440 100"

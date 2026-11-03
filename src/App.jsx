@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 
 import LogoIntro from "./components/branding/LogoIntro.jsx";
 import SiteFooter from "./components/footer/SiteFooter.jsx";
+import CrisisPage from "./components/CrisisPage.jsx";
 
 import HomePage from "./features/public-site/HomePage.jsx";
 import AboutPage from "./features/public-site/AboutPage.jsx";
@@ -11,6 +12,8 @@ import LibraryPage from "./features/public-site/LibraryPage.jsx";
 import ProgramsPage from "./features/public-site/ProgramsPage.jsx";
 import FAQ from "./features/public-site/FAQ.jsx";
 import ContactPage from "./features/public-site/ContactPage.jsx";
+
+import Dashboard from "./features/member-access/Dashboard.jsx";
 
 import Login from "./utils/authentication/Login.jsx";
 import Signup from "./utils/authentication/Signup.jsx";
@@ -77,6 +80,10 @@ export default function App() {
       {/* Inactive Authentication — no public footer */}
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+
+      {/* Member Access */}
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/crisis" element={<CrisisPage />} />
 
       {/* Fallback */}
       <Route

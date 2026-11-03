@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import {
   LuCompass,
@@ -15,6 +14,7 @@ import { GiSiren } from "react-icons/gi";
 
 import { useTheme } from "../../contexts/ThemeContext.jsx";
 import Header from "../../components/navigation/Header.jsx";
+import CurvedDivider from "../../components/branding/CurvedDivider.jsx";
 
 const services = [
   {
@@ -306,6 +306,14 @@ function OurOffer({ embedded = false }) {
           </div>
         </section>
       </main>
+
+      {/* Boundary: OurOffer → LibraryPage */}
+      <CurvedDivider
+        backgroundColor={theme.bgSoft}
+        waveColor={theme.bg}
+        domeColor={theme.primary}
+        domeOpacity={0.16}
+      />
     </div>
   );
 }
