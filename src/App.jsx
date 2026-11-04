@@ -13,6 +13,7 @@ import LibraryPage from "./features/public-site/LibraryPage.jsx";
 import ProgramsPage from "./features/public-site/ProgramsPage.jsx";
 import FAQ from "./features/public-site/FAQ.jsx";
 import ContactPage from "./features/public-site/ContactPage.jsx";
+import Donations from "./features/public-site/Donations.jsx";
 
 import Dashboard from "./features/member-access/Dashboard.jsx";
 import Milestones from "./features/member-access/Milestones.jsx";
@@ -26,6 +27,11 @@ import BookedSession from "./features/member-access/check-in/BookedSession.jsx";
 
 import GroupSummary from "./features/member-access/groups/Group-Summary.jsx";
 import PeopleHubStatus from "./features/member-access/people-hub/PeopleHubStatus.jsx";
+
+import Profile from "./features/member-access/user-settings/Profile.jsx";
+import Account from "./features/member-access/user-settings/Account.jsx";
+import General from "./features/member-access/user-settings/General.jsx";
+import PaymentMethod from "./features/member-access/user-settings/Payment_Method.jsx";
 
 import Login from "./utils/authentication/Login.jsx";
 import Signup from "./utils/authentication/Signup.jsx";
@@ -69,6 +75,17 @@ function App() {
       <Route path="/faq" element={<FAQ />} />
       <Route path="/contact" element={<ContactPage />} />
 
+      {/* Public Donations */}
+      <Route
+        path="/donations"
+        element={
+          <>
+            <Donations />
+            <SiteFooter />
+          </>
+        }
+      />
+
       {/* Public Support Area */}
       <Route
         path="/counselling"
@@ -86,6 +103,15 @@ function App() {
 
       {/* Member Dashboard */}
       <Route path="/dashboard" element={<Dashboard />} />
+
+      {/* Member Settings */}
+      <Route path="/settings/general" element={<General />} />
+      <Route path="/settings/profile" element={<Profile />} />
+      <Route path="/settings/account" element={<Account />} />
+      <Route
+        path="/settings/payment-method"
+        element={<PaymentMethod />}
+      />
 
       {/* Check-In */}
       <Route path="/check-in" element={<CheckInSummary />} />
