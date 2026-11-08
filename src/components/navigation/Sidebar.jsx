@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import {
   Link,
@@ -23,6 +22,7 @@ import {
   LuChevronDown,
   LuChevronRight,
   LuCreditCard,
+  LuBell,
   LuLogOut,
   LuInfo,
   LuShieldCheck,
@@ -104,6 +104,12 @@ const accountSettingsItems = [
     label: "Payment Method",
     to: "/settings/payment-method",
     icon: LuCreditCard,
+  },
+  {
+    label: "Notifications",
+    to: "/settings/notifications",
+    icon: LuBell,
+    showChevron: true,
   },
 ];
 
@@ -632,10 +638,12 @@ function MemberSidebarContent({
 
                     <span className="flex-1">{item.label}</span>
 
-                    <LuChevronRight
-                      size={15}
-                      className="shrink-0 opacity-50"
-                    />
+                    {item.showChevron && (
+                      <LuChevronRight
+                        size={15}
+                        className="shrink-0 opacity-50"
+                      />
+                    )}
                   </Link>
                 );
               })}
@@ -725,7 +733,7 @@ function MemberSidebarContent({
                   style={{ borderColor: theme.border }}
                 />
 
-                {/* Policies */}
+                {/* Policies — displayed immediately below Support */}
                 <section>
                   <div className="flex items-center gap-2 px-2 py-2">
                     <LuShieldCheck

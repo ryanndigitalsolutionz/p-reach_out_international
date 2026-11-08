@@ -2047,8 +2047,8 @@ export default function Resources() {
             <LuShieldCheck className="w-5 h-5 text-[#0D6E64] flex-shrink-0 mt-0.5" />
             <p className="text-sm text-[#4A544C]">
               Every item below comes from an established public-health body, hospital
-              foundation, or long-running peer-support fellowship — never a random blog. Safe
-              Haven doesn't host this material; each card links out to the publisher's own site.
+              foundation, or long-running peer-support fellowship — never a random blog. P-REACH 
+              OUT doesn't host this material; each card links out to the publisher's own site.
             </p>
           </div>
 
@@ -2152,7 +2152,7 @@ export default function Resources() {
             <p className="text-sm text-[#4A544C]">
               For anyone who'd rather watch than read. Every video comes from an established
               organization — TED, an academic research center, a government health agency, or a
-              recognized recovery non-profit — and plays on its original platform. Safe Haven
+              recognized recovery non-profit — and plays on its original platform. P-REACH OUT
               doesn't host or re-upload any of this footage.
             </p>
           </div>

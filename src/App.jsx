@@ -15,7 +15,7 @@ import FAQ from "./features/public-site/FAQ.jsx";
 import ContactPage from "./features/public-site/ContactPage.jsx";
 import Donations from "./features/public-site/Donations.jsx";
 
-import Dashboard from "./features/member-access/Dashboard.jsx";
+import Dashboard, { MemberShell } from "./features/member-access/Dashboard.jsx";
 import Milestones from "./features/member-access/Milestones.jsx";
 import PRNews from "./features/member-access/P-R_News.jsx";
 import Resources from "./features/member-access/Resources.jsx";
@@ -136,8 +136,14 @@ function App() {
       {/* P-R News */}
       <Route path="/p-r-news" element={<PRNews />} />
 
-      {/* Resources */}
-      <Route path="/resources" element={<Resources />} />
+      <Route
+        path="/resources"
+        element={
+          <MemberShell>
+            <Resources />
+          </MemberShell>
+        }
+      />
 
       {/* Journals */}
       <Route path="/journal" element={<Journal />} />
